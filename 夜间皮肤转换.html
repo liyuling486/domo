@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皮肤转换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="btn">日间模式</div>
+    </div>
+    <script>
+        var btn = document.getElementsByClassName('btn')[0];
+        var body = document.getElementsByTagName('body')[0];
+        var isNight = false;
+        btn.addEventListener('click', function () {
+            if (isNight) {
+                document.body.style.filter = '';
+                btn.innerHTML = '日间模式';
+            } else {
+                document.body.style.filter = 'invert(1) hue-rotate(270deg)';
+                btn.innerHTML = '夜间模式';
+            }
+            isNight = !isNight;
+        })
+    </script>
+</body>
+
+</html>
