@@ -44,10 +44,11 @@
                 btn.innerHTML = '日间模式';
             } else {
                 document.body.style.filter = 'invert(1) hue-rotate(270deg)';
+                // 还可以用这句话检测dom布局有没有问题
                 btn.innerHTML = '夜间模式';
             }
             isNight = !isNight;
-        })
+        });
     </script>
 </body>
 
